@@ -1,0 +1,27 @@
+body {
+  padding: 0;
+  max-width: 480px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+}
+
+
+#container {
+  display: flex;
+  background-color: blue;
+  height: 480px;
+  width: 480px;
+  flex-wrap: wrap;
+}
+
+div {
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  flex: 0 6.25%;
+}
