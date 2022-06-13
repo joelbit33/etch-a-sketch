@@ -37,7 +37,7 @@ function changeMatrixSize() {
     createMatrix(userInput);
 
   } else {
-    console.log('Only values between 1 and 100')
+    alert('Only values between 1 and 100')
   }
 }
 
