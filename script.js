@@ -19,6 +19,7 @@ function createMatrix(rowCol) {
   squareDiv.forEach((square) => {
     square.style.flex = `0 ${100 / rowCol}%`;
     square.addEventListener('mouseover', function () {
+      // implement if blocks that checks what color has been chosen(?)
       square.style.background = 'black';
     })
   });
