@@ -1,4 +1,9 @@
 const container = document.getElementById('container');
+const matrixSize = document.querySelector('.matrixDim');
+const resetButton = document.querySelector('.resetButton')
+
+// Matrix standard dimension
+const defaultMatrixSize = 16;
 
 
 function createMatrix(rowCol) {
@@ -18,11 +23,9 @@ function createMatrix(rowCol) {
     })
   });
 }
+createMatrix(defaultMatrixSize);
 
-let matrixDim = createMatrix(16);
-
-
-
+// Change size of matrix
 function changeMatrixSize() {
   let userInput = parseInt(prompt('Change Size: '));
 
@@ -37,8 +40,18 @@ function changeMatrixSize() {
   }
 }
 
-let matrixSize = (document.querySelector('.matrixDim'));
 matrixSize.addEventListener('click', changeMatrixSize);
+
+
+// Resets Matrix and creates new with default values
+function resetMatrix() {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+  createMatrix(defaultMatrixSize);
+}
+
+resetButton.addEventListener('click', resetMatrix)
 
 
 

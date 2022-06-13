@@ -1,16 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
 body {
+  font-family: 'Indie Flower', cursive;
   padding: 0;
   max-width: 480px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f72585;
 }
 
 header {
   text-align: center;
+  font-size: 2em;
 }
 
+.content {
+  display: flex;
+  flex-direction: row;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2em;
+}
+
+.button-container button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:'Courier New', Courier, monospace;
+  margin: .5em 0;
+  border: none;
+  background: #3f37c9;
+  color: white;
+  padding: 15px;
+  height: 10vh;
+  width: auto;
+  border-radius: 10%;
+  font-size: large;
+}
 
 #container {
   display: flex;
@@ -18,9 +51,5 @@ header {
   width: 55vh;
   flex-wrap: wrap;
   border: 1px solid black;
-}
-
-.squareDiv {
-
-  /* flex: 0 6.25%; */
+  background-color: white;
 }
