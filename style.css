@@ -47,6 +47,12 @@ header {
 
 .button-container .colorPicker {
   width: 5em;
+  height: 4em;
+}
+
+.button-container #sliderValue {
+  padding: 0;
+
 }
 
 #container {

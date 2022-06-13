@@ -1,9 +1,11 @@
 const container = document.getElementById('container');
 const matrixSize = document.querySelector('.matrixDim');
 const resetButton = document.querySelector('.resetButton');
-const currentSize = document.querySelector('.currentSize');
 const colorPicker = document.querySelector('.colorPicker');
+
 let currentColor = '#000000';
+let currentSizeString = document.querySelector('.currentSize');
+let sliderValue = document.querySelector('#sliderValue');
 
 // Matrix standard dimension
 const defaultMatrixSize = 16;
@@ -14,7 +16,7 @@ function createMatrix(rowCol) {
     let div = document.createElement('div');
     container.appendChild(div).classList.add('squareDiv');
   }
-  currentSize.innerText = `${rowCol} x ${rowCol}`;
+  currentSizeString.innerText = `${rowCol} x ${rowCol}`;
   let squareDiv = document.querySelectorAll('.squareDiv');
 
   // Adjusts the size of each square to fit the board and allows mouse-over(painting)
@@ -27,28 +29,21 @@ function createMatrix(rowCol) {
 }
 createMatrix(defaultMatrixSize);
 
+
 // Sets new color value to currentColor
 colorPicker.addEventListener('input', e => {
   currentColor = e.target.value;
 })
 
-// Change size of matrix
-function changeMatrixSize() {
-  let userInput = parseInt(prompt('Change Size: '));
-
-  if (userInput <= 100 && userInput >= 1) {
-    while (container.firstChild) {
-      container.removeChild(container.firstChild);
-    }
-    createMatrix(userInput);
-
-  } else {
-    alert('Only values between 1 and 100')
+// Change size of matrix with the slider
+sliderValue.addEventListener('change', function(e) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
   }
-}
 
-matrixSize.addEventListener('click', changeMatrixSize);
-
+  inputValue = parseInt(e.target.value);
+  createMatrix(inputValue);
+})
 
 // Resets Matrix and creates new with default values
 function resetMatrix() {
@@ -59,6 +54,34 @@ function resetMatrix() {
 }
 
 resetButton.addEventListener('click', resetMatrix)
+
+
+
+
+
+// Change size of matrix
+// function changeMatrixSize() {
+//   let userInput = parseInt(prompt('Change Size: '));
+
+//   if (userInput <= 100 && userInput >= 1) {
+//     while (container.firstChild) {
+//       container.removeChild(container.firstChild);
+//     }
+//     createMatrix(userInput);
+
+//   } else {
+//     alert('Only values between 1 and 100')
+//   }
+// }
+
+// matrixSize.addEventListener('click', changeMatrixSize);
+
+
+
+
+
+
+
 
 
 
