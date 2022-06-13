@@ -1,6 +1,7 @@
 const container = document.getElementById('container');
 const matrixSize = document.querySelector('.matrixDim');
-const resetButton = document.querySelector('.resetButton')
+const resetButton = document.querySelector('.resetButton');
+const currentSize = document.querySelector('.currentSize');
 
 // Matrix standard dimension
 const defaultMatrixSize = 16;
@@ -12,7 +13,7 @@ function createMatrix(rowCol) {
     let div = document.createElement('div');
     container.appendChild(div).classList.add('squareDiv');
   }
-
+  currentSize.innerText = `${rowCol} x ${rowCol}`;
   let squareDiv = document.querySelectorAll('.squareDiv');
 
   // Adjusts the size of each square to fit the board and allows mouse-over(painting)
