@@ -29,7 +29,7 @@ header {
   margin-right: 2em;
 }
 
-.button-container button {
+.button-container * {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,6 +45,10 @@ header {
   font-size: large;
 }
 
+.button-container .colorPicker {
+  width: 5em;
+}
+
 #container {
   display: flex;
   height: 55vh;
@@ -52,4 +56,14 @@ header {
   flex-wrap: wrap;
   border: 1px solid black;
   background-color: white;
+}
+
+.currentSize {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+  width: 4em;
+  font-size: 2em;
+  color: black;
 }
